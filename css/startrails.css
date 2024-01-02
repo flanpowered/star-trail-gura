@@ -1,0 +1,38 @@
+root{
+    --circle-size: 100vmax;
+    --speed: 180s;
+    --steps: var(--speed) * 100;
+}
+
+.activated-canvas {
+    width: var(--circle-size);
+    height: var(--circle-size);
+    position: fixed;
+    z-index: -1;
+    top: 105%;
+    left: 50%;
+
+    transform: translate(-50%,-50%) rotate(0deg);
+    animation: star-trails-anim 180s steps(9000) infinite;
+}
+
+.activated-async-canvas {
+    width: var(--circle-size);
+    height: var(--circle-size);
+    position: fixed;
+    z-index: -1;
+    top: 105%;
+    left: 50%;
+
+    transform: translate(-50%,-50%) rotate(0deg);
+    animation: star-trails-anim calc(180s * var(--i)/5) steps(9000) infinite;
+}
+
+@keyframes star-trails-anim {
+    0% {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}

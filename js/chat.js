@@ -1,0 +1,2 @@
+
+chatgpt.sendInNewChat("TEST JS")
